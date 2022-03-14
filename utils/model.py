@@ -1,3 +1,14 @@
+import os
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import joblib
+from matplotlib.colors import ListedColormap
+
+plt.style.use("fivethirtyeight") ## << optional step
+
+
 class Perceptron:
     def __init__(self, eta: float=None, epochs: int=None):
         self.weights = np.random.randn(3) * 1e-4 # small random weights
@@ -41,20 +52,6 @@ class Perceptron:
         X_with_bias = np.c_[X, -np.ones((len(X), 1))]
         z = self._z_outcome(X_with_bias, self.weights)
         return self.activation_function(z)
-    import os
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import joblib
-from matplotlib.colors import ListedColormap
-
-plt.style.use("fivethirtyeight") ## << optional step
-
-
-
-
-
 
 
     def total_loss(self):
